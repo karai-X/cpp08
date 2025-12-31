@@ -35,7 +35,3 @@ int main() {
   }
   return 0;
 }
-
-#include <deque>
-#include <list>
-#include <vector>
