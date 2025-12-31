@@ -69,11 +69,8 @@ int main() {
   {
     std::cout << "=== Test for more than 10,000 numbers ===" << std::endl;
     try {
-      Span sp = Span(100000);
-      srand(time(NULL));
-      for (int i; i < 50000; i++) {
-        sp.addNumber(rand());
-      }
+      Span sp = Span(50000);
+      sp.addNumber_all();
       std::cout << sp.shortestSpan() << std::endl;
       std::cout << sp.longestSpan() << std::endl;
     } catch (const std::exception &e) {

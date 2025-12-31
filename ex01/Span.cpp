@@ -16,6 +16,13 @@ void Span::addNumber(int num) {
   this->vec_.push_back(num);
 }
 
+void Span::addNumber_all() {
+  srand(time(NULL));
+  for (unsigned int i = 0; i < max_N_; i++) {
+    this->addNumber(rand());
+  }
+}
+
 long Span::shortestSpan() {
   if (vec_.size() < 2) {
     throw NotSpanFound();
