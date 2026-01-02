@@ -69,8 +69,13 @@ int main() {
   {
     std::cout << "=== Test for more than 10,000 numbers ===" << std::endl;
     try {
-      Span sp = Span(50000);
-      sp.addNumber_all();
+      Span sp = Span(20000);
+      srand(time(NULL));
+      std::vector<int> tmp_vec;
+      for (unsigned int i = 0; i < 20000; i++) {
+        tmp_vec.push_back(rand());
+      }
+      sp.addNumber_multi(tmp_vec);
       std::cout << sp.shortestSpan() << std::endl;
       std::cout << sp.longestSpan() << std::endl;
     } catch (const std::exception &e) {

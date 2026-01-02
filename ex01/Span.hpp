@@ -33,7 +33,7 @@ public:
   Span &operator=(const Span &other);
   ~Span();
   void addNumber(int num);
-  void addNumber_all();
+  void addNumber_multi(std::vector<int> input_vec);
   long shortestSpan();
   long longestSpan();
 };

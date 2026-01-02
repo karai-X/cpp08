@@ -16,11 +16,11 @@ void Span::addNumber(int num) {
   this->vec_.push_back(num);
 }
 
-void Span::addNumber_all() {
-  srand(time(NULL));
-  for (unsigned int i = 0; i < max_N_; i++) {
-    this->addNumber(rand());
+void Span::addNumber_multi(std::vector<int> input_vec) {
+  if (vec_.size() + input_vec.size() > max_N_) {
+    throw OverMaxSize();
   }
+  vec_.insert(vec_.end(), input_vec.begin(), input_vec.end());
 }
 
 long Span::shortestSpan() {
